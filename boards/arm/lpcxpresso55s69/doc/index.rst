@@ -153,7 +153,9 @@ MCUboot partitioning which looks like the table below
 +---------+------------------+---------------------------------+
 | slot3   | 0x00070000[96k]  | Updates slot1 image             |
 +---------+------------------+---------------------------------+
-| storage | 0x00088000[50k]  | File system, persistent storage |
+| scratch | 0x00088000[16k]  | Scratch buffer for Bootloader   |
++---------+------------------+---------------------------------+
+| storage | 0x0008C000[34k]  | File system, persistent storage |
 +---------+------------------+---------------------------------+
 
 See below examples of how this partitioning is used

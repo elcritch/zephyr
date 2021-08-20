@@ -119,13 +119,17 @@
 			label = "image-3";
 			reg = <0x00070000 0x00018000>;
 		};
+		scratch_partition: partition@88000  {
+			label = "image-scratch";
+			reg = <0x00088000 0x00004000>;
+		};
 		/*
-		 * The flash starting at 0x88000 and ending at
+		 * The flash starting at 0x8C000 and ending at
 		 * 0x949FF is reserved for the application.
 		 */
-		storage_partition: partition@88000 {
+		storage_partition: partition@8C000 {
 			label = "storage";
-			reg = <0x00088000 0x0000ca00>;
+			reg = <0x0008C000 0x00009400>;
 		};
 	};
 };
