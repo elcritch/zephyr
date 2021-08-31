@@ -99,6 +99,7 @@
 			label = "MCUX_FLASH";
 			reg = <0x0 DT_SIZE_K(630)>;
 			erase-block-size = <512>;
+			// erase-block-size = <32768>;
 			write-block-size = <512>;
 		};
 
