@@ -64,6 +64,7 @@
 			label = "Button";
 		};
 	};
+
 };
 
 &gpiote {
@@ -103,8 +104,6 @@
 	cs-gpios = <&gpio0 29 GPIO_ACTIVE_LOW>, /* A5 */
 				<&gpio0 11 GPIO_ACTIVE_LOW>; /* GPIO10 */
 };
-
-mikrobus_spi: &spi1 {};
 
 &flash0 {
 
