@@ -100,28 +100,28 @@
 
 		boot_partition: partition@0 {
 			label = "mcuboot";
-			reg = <0x00000000 0x00008000>;
+			reg = <0x00000000 0x0000A000>;
 			read-only;
 		};
-		slot0_partition: partition@8000 {
+		slot0_partition: partition@A000 {
 			label = "image-0";
-			reg = <0x00008000 0x00028000>;
+			reg = <0x0000A000 0x00038000>;
 		};
-		slot1_partition: partition@30000 {
+		slot1_partition: partition@42000 {
 			label = "image-1";
-			reg = <0x00030000 0x00018000>;
+			reg = <0x00042000 0x00038000>;
 		};
-		slot2_partition: partition@48000 {
-			label = "image-2";
-			reg = <0x00048000 0x00028000>;
-		};
-		slot3_partition: partition@70000 {
-			label = "image-3";
-			reg = <0x00070000 0x00018000>;
-		};
-		scratch_partition: partition@88000  {
+		// slot2_partition: partition@48000 {
+		// 	label = "image-2";
+		// 	reg = <0x00048000 0x00028000>;
+		// };
+		// slot3_partition: partition@70000 {
+		// 	label = "image-3";
+		// 	reg = <0x00070000 0x00018000>;
+		// };
+		scratch_partition: partition@7a000  {
 			label = "image-scratch";
-			reg = <0x00088000 0x00004000>;
+			reg = <0x0007a000 0x00012000>;
 		};
 		/*
 		 * The flash starting at 0x8C000 and ending at
