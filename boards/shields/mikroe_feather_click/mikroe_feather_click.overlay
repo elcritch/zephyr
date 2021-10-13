@@ -1,0 +1,16 @@
+/*
+ * Copyright (c) 2020 Richard Osterloh <richard.osterloh@gmail.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+// &mikrobus_spi {
+	// status = "okay";
+// };
+
+// / {
+// 	mikrobus_header: mikrobus-connector {
+// 	};
+// 	mikrobus_header-1: mikrobus-connector-1 {
+// 	};
+// };
