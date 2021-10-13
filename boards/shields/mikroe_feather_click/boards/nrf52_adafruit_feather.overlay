@@ -12,57 +12,55 @@
 		gpio-map-pass-thru = <0 0x3f>;
 
 		gpio-map =
-				<0 0 &gpio0 2 0>,	/* AN  */
-				<1 0 &gpio0 4 0>,	/* RST */
-				<2 0 &gpio1 29 0>,	/* CS   */
-				<3 0 &gpio1 12 0>,	/* SCK  */
-				<4 0 &gpio1 14 0>,	/* MISO */
-				<5 0 &gpio0 13 0>,	/* MOSI */
+				<0 0 &gpio0 2 0>,	/* AN - Feather:A0 */
+				<1 0 &gpio0 4 0>,	/* RST - Feather:A2 */
+				<2 0 &gpio0 29 0>,	/* CS - Feather:A5 */
+				<3 0 &gpio0 12 0>,	/* SCK - Feather:SCK */
+				<4 0 &gpio0 14 0>,	/* MISO - Feather:MISO*/
+				<5 0 &gpio0 13 0>,	/* MOSI - Feather:MOSI */
 							/* +3.3V */
 							/* GND */
 
-				<6 0 &gpio1 5 0>,	/* PWM  */
-				<7 0 &gpio1 28 0>,	/* INT  */
-			    <8 0 &gpio0 6 0>,	/* RXD */
-			    <9 0 &gpio0 8 0>,	/* TXD */
-			    <10 0 &gpio0 26 0>,	/* SCL */
-			    <11 0 &gpio0 25 0>;	/* SDA */
+				<6 0 &gpio0 5 0>,	/* PWM - Feather:A3 */
+				<7 0 &gpio0 28 0>,	/* INT - Feather:A4 */
+			    <8 0 &gpio0 6 0>,	/* RXD - Feather:RXD */
+			    <9 0 &gpio0 8 0>,	/* TXD - Feather:TXD */
+			    <10 0 &gpio0 26 0>,	/* SCL - Feather:SCL */
+			    <11 0 &gpio0 25 0>;	/* SDA - Feather:SDA */
 							/* +5V */
 							/* GND */
 	};
 
-	mikrobus_header-1: mikrobus-connector-1 {
+	mikrobus_header_1: mikrobus-connector-1 {
 		compatible = "mikro-bus";
 		#gpio-cells = <2>;
 		gpio-map-mask = <0xffffffff 0xffffffc0>;
 		gpio-map-pass-thru = <0 0x3f>;
 
 		gpio-map =
-				<0 0 &gpio0 3 0>,	/* AN  */
-				<1 0 &gpio0 4 0>,	/* RST */
-				<2 0 &gpio1 11 0>,	/* CS   */
-				<3 0 &gpio1 12 0>,	/* SCK  */
-				<4 0 &gpio1 14 0>,	/* MISO */
-				<5 0 &gpio0 13 0>,	/* MOSI */
+				<0 0 &gpio0 3 0>,	/* AN2 - Feather:A1 */
+				<1 0 &gpio0 15 0>,	/* RST2 - Feather:D12 */
+				<2 0 &gpio0 11 0>,	/* CS2 - Feather:D10  */
+				<3 0 &gpio0 12 0>,	/* SCK - Feather:SCK */
+				<4 0 &gpio0 14 0>,	/* MISO - Feather:MISO */
+				<5 0 &gpio0 13 0>,	/* MOSI - Feather:MOSI */
 							/* +3.3V */
 							/* GND */
 
-				<6 0 &gpio1 16 0>,	/* PWM  */
-				<7 0 &gpio1 7 0>,	/* INT  */
-			    <8 0 &gpio0 6 0>,	/* RXD */
-			    <9 0 &gpio0 8 0>,	/* TXD */
-			    <10 0 &gpio0 26 0>,	/* SCL */
-			    <11 0 &gpio0 25 0>;	/* SDA */
+				<6 0 &gpio0 16 0>,	/* PWM2 - Feather:D13 */
+				<7 0 &gpio0 7 0>,	/* INT2 - Feather:D11 */
+			    <8 0 &gpio0 6 0>,	/* RXD - Feather:RXD */
+			    <9 0 &gpio0 8 0>,	/* TXD - Feather:TXD */
+			    <10 0 &gpio0 26 0>,	/* SCL - Feather:SCL */
+			    <11 0 &gpio0 25 0>;	/* SDA - Feather:SDA */
 							/* +5V */
 							/* GND */
 	};
-
-
 };
 
-mikrobus_i2c: &i2c0 {};
+mikrobus_i2c: &i2c0 {
+	status = "okay";
+};
 mikrobus_spi: &spi1 {
 	status = "okay";
-	cs-gpios = <&gpio0 29 GPIO_ACTIVE_LOW>, /* A5 */
-				<&gpio0 11 GPIO_ACTIVE_LOW>; /* GPIO10 */
 };

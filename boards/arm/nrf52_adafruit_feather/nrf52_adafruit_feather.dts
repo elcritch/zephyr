@@ -8,6 +8,7 @@
 /dts-v1/;
 #include <nordic/nrf52832_qfaa.dtsi>
 #include "feather_connector.dtsi"
+#include "mikroe_feather_click.dtsi"
 
 / {
 	model = "nRF52 Adafruit Feather";
@@ -101,6 +102,8 @@
 	sck-pin = <12>;
 	mosi-pin = <13>;
 	miso-pin = <14>;
+	cs-gpios = <&gpio0 29 GPIO_ACTIVE_LOW>, /* A5 */
+				<&gpio0 11 GPIO_ACTIVE_LOW>; /* GPIO10 */
 };
 
 &flash0 {

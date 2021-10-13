@@ -1,0 +1,66 @@
+/*
+ * Copyright (c) 2020 Richard Osterloh <richard.osterloh@gmail.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/ {
+	mikrobus_header: mikrobus-connector {
+		compatible = "mikro-bus";
+		#gpio-cells = <2>;
+		gpio-map-mask = <0xffffffff 0xffffffc0>;
+		gpio-map-pass-thru = <0 0x3f>;
+
+		gpio-map =
+				<0 0 &gpio0 4 0>,	/* AN - Feather:A0 */
+				<1 0 &gpio0 30 0>,	/* RST - Feather:A2 */
+				<2 0 &gpio0 3 0>,	/* CS - Feather:A5 */
+				<3 0 &gpio0 14 0>,	/* SCK - Feather:SCK */
+				<4 0 &gpio0 15 0>,	/* MISO - Feather:MISO*/
+				<5 0 &gpio0 13 0>,	/* MOSI - Feather:MOSI */
+							/* +3.3V */
+							/* GND */
+
+				<6 0 &gpio0 28 0>,	/* PWM - Feather:A3 */
+				<7 0 &gpio0 2 0>,	/* INT - Feather:A4 */
+				<8 0 &gpio0 24 0>,	/* RXD - Feather:RXD */
+				<9 0 &gpio0 25 0>,	/* TXD - Feather:TXD */
+				<10 0 &gpio0 11 0>,	/* SCL - Feather:SCL */
+				<11 0 &gpio0 12 0>;	/* SDA - Feather:SDA */
+							/* +5V */
+							/* GND */
+	};
+
+	mikrobus_header_1: mikrobus-connector-1 {
+		compatible = "mikro-bus";
+		#gpio-cells = <2>;
+		gpio-map-mask = <0xffffffff 0xffffffc0>;
+		gpio-map-pass-thru = <0 0x3f>;
+
+		gpio-map =
+				<0 0 &gpio0 5 0>,	/* AN2 - Feather:A1 */
+				<1 0 &gpio0 8 0>,	/* RST2 - Feather:D12 */
+				<2 0 &gpio0 27 0>,	/* CS2 - Feather:D10  */
+				<3 0 &gpio0 14 0>,	/* SCK - Feather:SCK */
+				<4 0 &gpio0 15 0>,	/* MISO - Feather:MISO*/
+				<5 0 &gpio0 13 0>,	/* MOSI - Feather:MOSI */
+							/* +3.3V */
+							/* GND */
+
+				<6 0 &gpio1 16 0>,	/* PWM2 - Feather:D13 */
+				<7 0 &gpio0 7 0>,	/* INT2 - Feather:D11 */
+				<8 0 &gpio0 24 0>,	/* RXD - Feather:RXD */
+				<9 0 &gpio0 25 0>,	/* TXD - Feather:TXD */
+				<10 0 &gpio0 11 0>,	/* SCL - Feather:SCL */
+				<11 0 &gpio0 12 0>;	/* SDA - Feather:SDA */
+							/* +5V */
+							/* GND */
+	};
+};
+
+mikrobus_i2c: &i2c0 {
+	status = "okay";
+};
+mikrobus_spi: &spi1 {
+	status = "okay";
+};
