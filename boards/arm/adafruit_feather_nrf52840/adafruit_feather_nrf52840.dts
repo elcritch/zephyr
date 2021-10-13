@@ -88,6 +88,8 @@
 	sck-pin = <14>;
 	mosi-pin = <13>;
 	miso-pin = <15>;
+	cs-gpios = <&gpio0 3 GPIO_ACTIVE_LOW>, /* A5 */
+				<&gpio0 27 GPIO_ACTIVE_LOW>; /* D10 */
 };
 
 &qspi {
