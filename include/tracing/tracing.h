@@ -17,6 +17,9 @@
 #elif defined CONFIG_TRACING_TEST
 #include "tracing_test.h"
 
+#elif defined CONFIG_TRACING_EXTERNAL
+#include "tracing_external.h"
+
 #else
 
 /**

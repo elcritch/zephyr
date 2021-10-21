@@ -60,6 +60,12 @@ config TRACING_TEST
 	  Enable tracing for testing kinds of format purpose. It must
 	  implement the tracing hooks defined in tracing_test.h
 
+config TRACING_EXTERNAL
+    bool "External tracing support"
+    depends on ZEPHYR_EXTERNALTRACING_MODULE
+    help
+      Enable external tracing module support.
+
 endchoice
 
 
