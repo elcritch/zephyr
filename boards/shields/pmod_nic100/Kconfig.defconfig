@@ -1,0 +1,20 @@
+# Copyright (c) 2020 Linaro Limited
+# SPDX-License-Identifier: Apache-2.0
+
+if SHIELD_PMOD_NIC100
+
+if NETWORKING
+
+config SPI
+	default y
+
+config NET_L2_ETHERNET
+	default y
+
+# ENC28J60 Ethernet Device
+config ETH_ENC424J600
+	default y
+
+endif # NETWORKING
+
+endif # SHIELD_MIKROE_ETH_CLICK
